@@ -1,120 +1,169 @@
+/* ------------------------------------
+   GLOBAL RESET & FONT
+------------------------------------ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* ------------------------------------
+   BODY
+------------------------------------ */
 body {
   background: #f5f7fb;
   color: #1f2937;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* APP CONTAINER */
 .app {
-  max-width: 420px;
+  max-width: 440px;
   margin: auto;
   padding: 16px;
 }
 
-/* NEXT CLASS CARD */
+/* ------------------------------------
+   NEXT CLASS CARD (ALWAYS TODAY)
+------------------------------------ */
 .next-class-card {
   background: linear-gradient(135deg, #22c55e, #16a34a);
   color: white;
-  border-radius: 18px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  border-radius: 22px;
+  padding: 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
 }
 
 .next-class-card h2 {
   font-size: 14px;
-  opacity: 0.9;
+  opacity: 0.85;
+  font-weight: 500;
 }
 
 .next-class-details h3 {
-  font-size: 22px;
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 6px;
 }
 
 .countdown {
   display: inline-block;
-  margin-top: 10px;
-  background: rgba(255,255,255,0.2);
-  padding: 6px 12px;
+  margin-top: 14px;
+  background: rgba(255,255,255,0.22);
+  padding: 6px 14px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 14px;
+  backdrop-filter: blur(6px);
 }
 
-/* DAY SELECTOR */
+/* ------------------------------------
+   THEME TOGGLE
+------------------------------------ */
+.theme-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.theme-btn:hover {
+  opacity: 0.9;
+}
+
+.theme-btn:active {
+  transform: scale(0.96);
+}
+
+/* ------------------------------------
+   DAY SELECTOR BUTTONS
+------------------------------------ */
 .day-selector {
   display: flex;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .day {
   flex: 1;
   padding: 10px;
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   background: white;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: 0.25s;
+  text-transform: uppercase;
 }
 
 .day.active {
   background: #2563eb;
   color: white;
+  letter-spacing: 0.5px;
 }
 
 .day:active {
-  transform: scale(0.95);
+  transform: scale(0.94);
 }
 
-/* CLASS LIST */
+/* ------------------------------------
+   CLASS LIST
+------------------------------------ */
 .class-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  animation: fadeIn 0.3s ease;
+  gap: 14px;
+  animation: fadeIn 0.35s ease;
 }
 
 .class-card {
   background: white;
-  border-radius: 14px;
-  padding: 14px;
+  border-radius: 16px;
+  padding: 16px;
   display: flex;
   gap: 12px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.07);
+  transition: 0.3s;
 }
 
 .class-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.09);
 }
 
+/* INDICATORS FOR TODAY ONLY */
 .class-card.current {
-  border-left: 5px solid #22c55e;
+  border-left: 6px solid #22c55e;
   background: #ecfdf5;
 }
 
 .class-card.next {
-  border-left: 5px solid #2563eb;
+  border-left: 6px solid #2563eb;
+  background: #eff6ff;
 }
 
+/* Class Time Styling */
 .time {
-  font-weight: 700;
+  font-weight: 800;
   color: #2563eb;
-  min-width: 90px;
+  min-width: 96px;
 }
 
+/* Class Status Tags */
 .badge {
   font-size: 10px;
-  padding: 2px 6px;
+  padding: 3px 7px;
   border-radius: 6px;
   margin-left: 6px;
   color: white;
+  font-weight: 700;
 }
 
 .badge.green {
@@ -125,7 +174,55 @@ body {
   background: #2563eb;
 }
 
+/* ------------------------------------
+   ANIMATIONS
+------------------------------------ */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------
+   DARK MODE
+------------------------------------ */
+body.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+body.dark .theme-btn {
+  background: #3b82f6;
+}
+
+body.dark .next-class-card {
+  filter: brightness(0.95);
+}
+
+body.dark .class-card {
+  background: #1e293b;
+  color: #e2e8f0;
+  box-shadow: 0 0 0 transparent;
+}
+
+body.dark .class-card.current {
+  background: #064e3b;
+  border-left: 6px solid #059669;
+}
+
+body.dark .class-card.next {
+  background: #1e40af;
+  border-left: 6px solid #3b82f6;
+}
+
+body.dark .day {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+body.dark .day.active {
+  background: #3b82f6;
+}
+
+body.dark .time {
+  color: #93c5fd;
 }
