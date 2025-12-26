@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+.app {
+  max-width: 420px;
+  margin: auto;
+  padding: 16px;
+}
+
+/* NEXT CLASS CARD */
+.next-class-card {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.next-class-card h2 {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.next-class-details h3 {
+  font-size: 22px;
+}
+
+.countdown {
+  display: inline-block;
+  margin-top: 10px;
+  background: rgba(255,255,255,0.2);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+/* DAY SELECTOR */
+.day-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.day {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.day.active {
+  background: #2563eb;
+  color: white;
+}
+
+.day:active {
+  transform: scale(0.95);
+}
+
+/* CLASS LIST */
+.class-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.class-card {
+  background: white;
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  gap: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.class-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.class-card.current {
+  border-left: 5px solid #22c55e;
+  background: #ecfdf5;
+}
+
+.class-card.next {
+  border-left: 5px solid #2563eb;
+}
+
+.time {
+  font-weight: 700;
+  color: #2563eb;
+  min-width: 90px;
+}
+
+.badge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 6px;
+  color: white;
+}
+
+.badge.green {
+  background: #22c55e;
+}
+
+.badge.blue {
+  background: #2563eb;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
