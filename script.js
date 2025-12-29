@@ -18,8 +18,8 @@ const timetable = {
     { subject: "EV Tech", room: "ICT / 428", start: "13:00", end: "13:50" }
   ],
   Wed: [
-    { subject: "GCGC", room: "ICT / 305", start: "08:00", end: "08:50" },
-    { subject: "GCGC", room: "ICT / 305", start: "09:00", end: "09:50" },
+    { subject: "CLAD", room: "ICT / 305", start: "08:00", end: "08:50" },
+    { subject: "CLAD", room: "ICT / 305", start: "09:00", end: "09:50" },
     { subject: "DBMS", room: "ICT / 118", start: "10:00", end: "10:50" },
     { subject: "DAA", room: "ICT / 119", start: "11:00", end: "11:50" }
   ],

@@ -1,228 +1,240 @@
-/* ------------------------------------
-   GLOBAL RESET & FONT
------------------------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
 
-/* ------------------------------------
-   BODY
------------------------------------- */
-body {
-  background: #f5f7fb;
-  color: #1f2937;
-  transition: background 0.3s ease, color 0.3s ease;
-}
+  /* ------------------------------------
+    GLOBAL RESET & FONT
+  ------------------------------------ */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
 
-/* APP CONTAINER */
-.app {
-  max-width: 440px;
-  margin: auto;
-  padding: 16px;
-}
+  /* ------------------------------------
+    BODY
+  ------------------------------------ */
+  body {
+    background: #f5f7fb;
+    color: #1f2937;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
 
-/* ------------------------------------
-   NEXT CLASS CARD (ALWAYS TODAY)
------------------------------------- */
-.next-class-card {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: white;
-  border-radius: 22px;
-  padding: 22px;
-  margin-bottom: 24px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-}
+  /* APP CONTAINER */
+  .app {
+    max-width: 440px;
+    margin: auto;
+    padding: 16px;
+  }
 
-.next-class-card h2 {
-  font-size: 14px;
-  opacity: 0.85;
-  font-weight: 500;
-}
+  /* ------------------------------------
+    NEXT CLASS CARD (ALWAYS TODAY)
+  ------------------------------------ */
+  .next-class-card {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border-radius: 22px;
+    padding: 22px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
 
-.next-class-details h3 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-top: 6px;
-}
+  .next-class-details {
+    flex: 1;
+  }
 
-.countdown {
-  display: inline-block;
-  margin-top: 14px;
-  background: rgba(255,255,255,0.22);
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 14px;
-  backdrop-filter: blur(6px);
-}
+  .next-class-card h2 {
+    font-size: 14px;
+    opacity: 0.85;
+    font-weight: 500;
+  }
 
-/* ------------------------------------
-   THEME TOGGLE
------------------------------------- */
-.theme-btn {
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 12px 14px;
-  border-radius: 14px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  width: 100%;
-  font-weight: 600;
-  transition: 0.25s;
-}
+  .next-class-details h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 6px;
+  }
 
-.theme-btn:hover {
-  opacity: 0.9;
-}
+  .countdown {
+    display: inline-block;
+    margin-top: 14px;
+    background: rgba(255,255,255,0.22);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    backdrop-filter: blur(6px);
+  }
 
-.theme-btn:active {
-  transform: scale(0.96);
-}
+  /* ------------------------------------
+    THEME TOGGLE
+  ------------------------------------ */
+  .theme-btn {
+    background: rgba(255,255,255,0.25);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s;
+    font-size: 12px;
+    backdrop-filter: blur(6px);
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin: 0;
+  }
 
-/* ------------------------------------
-   DAY SELECTOR BUTTONS
------------------------------------- */
-.day-selector {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
-}
+  .theme-btn:hover {
+    background: rgba(255,255,255,0.35);
+  }
 
-.day {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 14px;
-  background: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.25s;
-  text-transform: uppercase;
-}
+  .theme-btn:active {
+    transform: scale(0.96);
+  }
 
-.day.active {
-  background: #2563eb;
-  color: white;
-  letter-spacing: 0.5px;
-}
+  /* ------------------------------------
+    DAY SELECTOR BUTTONS
+  ------------------------------------ */
+  .day-selector {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
 
-.day:active {
-  transform: scale(0.94);
-}
+  .day {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 14px;
+    background: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+    text-transform: uppercase;
+  }
 
-/* ------------------------------------
-   CLASS LIST
------------------------------------- */
-.class-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  animation: fadeIn 0.35s ease;
-}
+  .day.active {
+    background: #2563eb;
+    color: white;
+    letter-spacing: 0.5px;
+  }
 
-.class-card {
-  background: white;
-  border-radius: 16px;
-  padding: 16px;
-  display: flex;
-  gap: 12px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.07);
-  transition: 0.3s;
-}
+  .day:active {
+    transform: scale(0.94);
+  }
 
-.class-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.09);
-}
+  /* ------------------------------------
+    CLASS LIST
+  ------------------------------------ */
+  .class-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    animation: fadeIn 0.35s ease;
+  }
 
-/* INDICATORS FOR TODAY ONLY */
-.class-card.current {
-  border-left: 6px solid #22c55e;
-  background: #ecfdf5;
-}
+  .class-card {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.07);
+    transition: 0.3s;
+  }
 
-.class-card.next {
-  border-left: 6px solid #2563eb;
-  background: #eff6ff;
-}
+  .class-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.09);
+  }
 
-/* Class Time Styling */
-.time {
-  font-weight: 800;
-  color: #2563eb;
-  min-width: 96px;
-}
+  /* INDICATORS FOR TODAY ONLY */
+  .class-card.current {
+    border-left: 6px solid #22c55e;
+    background: #ecfdf5;
+  }
 
-/* Class Status Tags */
-.badge {
-  font-size: 10px;
-  padding: 3px 7px;
-  border-radius: 6px;
-  margin-left: 6px;
-  color: white;
-  font-weight: 700;
-}
+  .class-card.next {
+    border-left: 6px solid #2563eb;
+    background: #eff6ff;
+  }
 
-.badge.green {
-  background: #22c55e;
-}
+  /* Class Time Styling */
+  .time {
+    font-weight: 800;
+    color: #2563eb;
+    min-width: 96px;
+  }
 
-.badge.blue {
-  background: #2563eb;
-}
+  /* Class Status Tags */
+  .badge {
+    font-size: 10px;
+    padding: 3px 7px;
+    border-radius: 6px;
+    margin-left: 6px;
+    color: white;
+    font-weight: 700;
+  }
 
-/* ------------------------------------
-   ANIMATIONS
------------------------------------- */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+  .badge.green {
+    background: #22c55e;
+  }
 
-/* ------------------------------------
-   DARK MODE
------------------------------------- */
-body.dark {
-  background: #0f172a;
-  color: #e5e7eb;
-}
+  .badge.blue {
+    background: #2563eb;
+  }
 
-body.dark .theme-btn {
-  background: #3b82f6;
-}
+  /* ------------------------------------
+    ANIMATIONS
+  ------------------------------------ */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-body.dark .next-class-card {
-  filter: brightness(0.95);
-}
+  /* ------------------------------------
+    DARK MODE
+  ------------------------------------ */
+  body.dark {
+    background: #0f172a;
+    color: #e5e7eb;
+  }
 
-body.dark .class-card {
-  background: #1e293b;
-  color: #e2e8f0;
-  box-shadow: 0 0 0 transparent;
-}
+  body.dark .theme-btn {
+    background: #3b82f6;
+  }
 
-body.dark .class-card.current {
-  background: #064e3b;
-  border-left: 6px solid #059669;
-}
+  body.dark .next-class-card {
+    filter: brightness(0.95);
+  }
 
-body.dark .class-card.next {
-  background: #1e40af;
-  border-left: 6px solid #3b82f6;
-}
+  body.dark .class-card {
+    background: #1e293b;
+    color: #e2e8f0;
+    box-shadow: 0 0 0 transparent;
+  }
 
-body.dark .day {
-  background: #334155;
-  color: #e2e8f0;
-}
+  body.dark .class-card.current {
+    background: #064e3b;
+    border-left: 6px solid #059669;
+  }
 
-body.dark .day.active {
-  background: #3b82f6;
-}
+  body.dark .class-card.next {
+    background: #1e40af;
+    border-left: 6px solid #3b82f6;
+  }
 
-body.dark .time {
-  color: #93c5fd;
-}
+  body.dark .day {
+    background: #334155;
+    color: #e2e8f0;
+  }
+
+  body.dark .day.active {
+    background: #3b82f6;
+  }
+
+  body.dark .time {
+    color: #93c5fd;
+  }
