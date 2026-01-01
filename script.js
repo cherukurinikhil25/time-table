@@ -52,8 +52,8 @@ const buttons = document.querySelectorAll(".day");
 const list = document.querySelector(".class-list");
 
 const title = document.querySelector(".next-class-details h3");
-const room = document.querySelector(".next-class-details p:nth-child(2)");
-const time = document.querySelector(".next-class-details p:nth-child(3)");
+const room = document.querySelector(".next-class-details p:nth-child(3)");
+const time = document.querySelector(".next-class-details p:nth-child(4)");
 const countdown = document.querySelector(".countdown");
 
 let interval;
@@ -183,7 +183,7 @@ const themeBtn = document.getElementById("themeToggle");
 function loadTheme(){
   if(localStorage.getItem("theme")==="dark"){
     document.body.classList.add("dark");
-    themeBtn.textContent="☀️ Light Mode";
+    themeBtn.textContent="☀️";
   }
 }
 loadTheme();
@@ -191,7 +191,7 @@ loadTheme();
 themeBtn.addEventListener("click",()=>{
   document.body.classList.toggle("dark");
   const isDark=document.body.classList.contains("dark");
-  themeBtn.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+  themeBtn.textContent = isDark ? "☀️" : "🌙";
   localStorage.setItem("theme", isDark?"dark":"light");
 });
 
